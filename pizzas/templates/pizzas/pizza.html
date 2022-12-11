@@ -12,8 +12,27 @@
     {% empty %}
     <li> No toppings for this pizza are available.</li>
     {% endfor %}
+    <p>&nbsp</p>
+    <p>Add a comment</p>
+    </span>
+    <form action="{% url 'pizzas:pizza' pizza.id %}" method="post">
+    </span>
+        {% csrf_token %}
+
+        {{form.as_p}}
+
+        <button name="submit">Add Comment</button>
+    </form>
+    
 
 
 
 </ul>
+
+<style>
+    body {
+      background-image: url('https://img.freepik.com/premium-photo/pop-art-pizza-pink-background_189440-86.jpg?w=2000');
+      background-repeat: no-repeat;
+    }
+    </style>
 {% endblock content %}

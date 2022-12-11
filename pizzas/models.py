@@ -18,8 +18,10 @@ class Topping(models.Model):
     def __str__(self):
         return f"{self.topping_name[:50]}...."
 
-    '''
-    def __str___(self):
-        #return '%s %s' % (self.pizza, self.topping_name)
-        return f"{self.text[:50]}...."
-    '''
+class Comment(models.Model):
+    pizza = models.ForeignKey(Pizza,on_delete=models.CASCADE)
+    comment = models.TextField()
+    date_added = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.review
