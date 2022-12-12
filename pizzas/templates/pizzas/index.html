@@ -1,14 +1,166 @@
-{% extends "pizzas/base.html" %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Page Title</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
 
-{% block content %}
-    <p>
-     Home of our world-famous pizzas with imported ingredients!
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+
+/* Style the header */
+.header {
+  padding: 80px;
+  text-align: center;
+  background-image: url('https://i.pinimg.com/originals/14/1d/ec/141decf0bd396ed39cbb1bc5905fa4a5.png');
+  color: white;
+
+}
+
+/* Increase the font size of the h1 element */
+.header h1 {
+  font-size: 40px;
+}
+
+/* Style the top navigation bar */
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+}
+
+/* Style the navigation bar links */
+.navbar a {
+  float: left;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 20px;
+  text-decoration: none;
+}
+
+/* Right-aligned link */
+.navbar a.right {
+  float: right;
+}
+
+/* Change color on hover */
+.navbar a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Column container */
+.row {  
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* Create two unequal columns that sits next to each other */
+/* Sidebar/left column */
+.side {
+  flex: 30%;
+  background-color: #282828;
+  padding: 20px;
+
+  padding: 80px;
+  
+  color: white;
+}
+
+/* Main column */
+.main {   
+  flex: 70%;
+  background-color: #ff3c3c64;
+  padding: 20px;
+
+  padding: 80px;
+  
+  color: black;
+}
+
+/* Fake image, just for this example */
+.hawaiianimg {
+  background-color: #aaa;
+  background-image: url('https://www.jessicagavin.com/wp-content/uploads/2020/07/hawaiian-pizza-16-1200-500x500.jpg');
+  width: 100%;
+  padding: 20px;
+}
+
+.meatimg {
+  background-color: #aaa;
+  background-image: url('https://www.pizzahut.com/c/assets/img/meat-lovers-pizza_875x300.jpg');
+  width: 100%;
+  padding: 20px;
+}
+
+.aboutmeimg {
+  background-color: #aaa;
+  background-image: url('https://external-preview.redd.it/4bovrkAVVSgRyXemzA55PkSUdnZSSX5l6QIl3-i-1wM.jpg?auto=webp&s=0cabf7249702c81a628c1a7bebdaaee4231866ea');
+  width: 100%;
+  padding: 20px;
+}
+
+.extraimg {
+  background-color: #aaa;
+  background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9ko-GMo_tnOeEbFuzAxrzbdP87WBCwzjMNg&usqp=CAU');
+  width: 100%;
+  padding: 20px;
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>Django's Pizza</h1>
+  <p>Home of our world-famous pizzas with imported ingredients!</p>
+
+  
+
+</div>
+
+<div class="navbar">
+  <a class="nav-item nav-link active" href="{% url 'pizzas:index' %}">Home</a>
+  <a class="nav-item nav-link" href="{% url 'pizzas:pizzas' %}">Our Pizzas</a>
+</div>
+
+<div class="row">
+  <div class="side">
+    <h2>About Me</h2>
+    <h5>Photo of me:</h5>
+    <div class="aboutmeimg" style="height:200px;"></div>
+    <p>I started my undergraduate education at Baylor University in 2006. All was going well as I made straight A's on my path to become
+      a doctor and make my family proud. Everything changed when Papa's Pizzeria dropped on coolmathgames.com. I started spending
+      day and night serving virtual customers. After finding my true calling, I eventually dropped out to pursue my dream of 
+      running the greatest pizza shop in the world. 
     </p>
+    <h3>14 years of Django's Pizzeria</h3>
+    <p>Chef Django's Pizzeria has been a Waco staple since 2008. </p>
+    <div class="extraimg" style="height:200px;width:150px"></div><br>
+  </div>
+  <div class="main">
+    <h2>NEW: Hawaiian Style Pizza</h2>
+    <h5>Return of a fan-favorite, Dec 7, 2022</h5>
+    <div class="hawaiianimg" style="height:200px;"></div>
+    <p>Try new Hawaiian Pizza today! </p>
+    <p>In this life, there are many age-old questions:</p>
+    <p> 1) What is the true meaning of happiness? </p>
+    <p> 2) What is our purpose on this Earth?  </p>
+    <p> 3) Do pineapples really belong on Pizza?  </p>
+    <p>With the return of our classic Hawaiian Style Pizza, you'll atleast be able to answer that last one! Order yours today! </p>
+    <br>
+    <h2>DEAL: try our world-famous Meat Lovers pizza for 20% off! </h2>
+    <h5>The perfect deal for pizza enthusiasts who are afraid of commitment, Nov 2, 2022</h5>
+    <div class="meatimg" style="height:200px;"></div>
+    <p>"Love" is a strong word</p>
+    <p>I've always thought of myself as more of a meat "liker" than a "lover". If you're the same as me, this 20% off our Meat Lovers pizza is just for you!</p>
+  </div>
+</div>
 
-    <style>
-        body {
-          background-image: url('https://s3.eu-west-1.amazonaws.com/images.prod.phoode.com/photos/project/5fe36e9a16526.jpeg');
-          background-repeat: no-repeat;
-        }
-        </style>
-{% endblock content %}
+</body>
+</html>
